@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Signature creator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+    <body onload="init()">
+        <div class="container">
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="#">Signature creator</a>
+
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Create signature</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Create signature</li>
+                </ol>
+            </nav>
+
+            <form>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="selectWidth">Chose width</label>
+                            <select class="form-control" id="selectWidth" onChange="width(this.value)">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="selectColor">Chose color</label>
+                            <select class="form-control" id="selectColor" onChange="color(this.value)">
+                                <option value="black">black</option>
+                                <option value="blue">blue</option>
+                                <option value="green">green</option>
+                                <option value="orange">orange</option>
+                                <option value="red">red</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <canvas id="can" width="380" height="150" style="border:1px solid #ced4da;"></canvas>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <img id="canvasimg" style="display:none; margin-bottom: 10px">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+                    <button type="button" class="btn btn-danger" onclick="erase()">Clear</button>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="/assets/js/main.js"></script>
+</html>
